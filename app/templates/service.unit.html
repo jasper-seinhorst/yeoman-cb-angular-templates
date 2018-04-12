@@ -1,0 +1,16 @@
+describe('<%= moduleName %>', function() {
+    describe('cb<%= componentName %>Service', function() {
+
+        var <%= componentName %>Service;
+
+        beforeEach(angular.mock.module('<%= moduleName %>'));
+
+        beforeEach(angular.mock.inject(function (_cb<%= componentName %>Service_) {
+           <%= componentName %>Service = _cb<%= componentName %>Service_;
+        }));
+
+        it('expect all functions in cb<%= componentName %>Service to be defined', function() {
+
+        });
+    });
+});

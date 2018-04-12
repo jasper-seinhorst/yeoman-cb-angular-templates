@@ -1,0 +1,24 @@
+'use strict';
+
+var angular = require('angular');
+require('index.js');
+require('angular-mocks');
+
+describe('<%= moduleName %>', function () {
+    var $compile;
+    var $scope;
+
+    beforeEach(angular.mock.module('<%= moduleName %>'));
+
+    beforeEach(angular.mock.inject(function ($injector, _$compile_, _$rootScope_) {
+        $compile = _$compile_;
+        $scope = _$rootScope_.$new();
+    }));
+
+    describe('cb-<%= htmlName %>', function () {
+        it('should load directive cb-<%= htmlName %>', function() {
+            var element = $compile('<cb-<%= htmlName %>></cb-<%= htmlName %>>')($scope);
+            $scope.$digest();
+        });
+    });
+});

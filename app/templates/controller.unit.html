@@ -1,0 +1,24 @@
+'use strict';
+
+var angular = require('angular');
+require('index.js');
+require('angular-mocks');
+
+describe('<%= moduleName %>', function() {
+
+    var $rootScope, $scope, $controller, cb<%= componentName %>Controller;
+
+    beforeEach(angular.mock.module('<%= moduleName %>'));
+
+    beforeEach(inject(function(_$rootScope_, _$controller_) {
+        $rootScope = _$rootScope_;
+        $scope = $rootScope.$new();
+        $controller = _$controller_;
+
+        cb<%= componentName %>Controller = $controller('cb<%= componentName %>Controller', {'$rootScope' : $rootScope, '$scope': $scope});
+    }));
+
+    it('cb<%= componentName %>Controller should exist', function() {
+        expect(cb<%= componentName %>Controller).toBeDefined();
+    });
+});
